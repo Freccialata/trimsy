@@ -1,8 +1,6 @@
 package trimsync
 
-import "core:c"
 import "core:fmt"
-import "core:math"
 import ff "ffmpeg"
 
 // Decoded_Audio holds the raw audio samples decoded from a video file.

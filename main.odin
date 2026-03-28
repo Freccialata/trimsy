@@ -2,7 +2,6 @@ package trimsy
 
 import "core:fmt"
 import "core:os"
-import "core:strings"
 import ts "trimsync"
 
 TRIMSY_VERSION :: "0.1.0"

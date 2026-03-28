@@ -81,7 +81,7 @@ ffmpeg_process :: proc(
 	filter_str := strings.to_string(sb)
 
 	// For long filter strings, write to a temp file to avoid shell limits
-	filter_script_path := "/tmp/trimsync_filter.txt"
+	filter_script_path := "trimsync_filter.temp"
 	ok := os.write_entire_file(filter_script_path, transmute([]u8)filter_str)
 	if !ok {
 		fmt.eprintfln("[trimsy] error: could not write filter script to %s", filter_script_path)

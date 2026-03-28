@@ -1,7 +1,6 @@
 package trimsync
 
 import "core:fmt"
-import "core:math"
 
 // Speed value that means "skip this segment entirely" (jump-cut mode).
 SKIP_SPEED :: f32(-1)

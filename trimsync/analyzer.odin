@@ -1,6 +1,5 @@
 package trimsync
 
-import "core:fmt"
 import "core:math"
 
 // analyze_silence takes decoded mono audio and produces a per-frame

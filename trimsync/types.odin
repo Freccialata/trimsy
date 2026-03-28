@@ -75,6 +75,7 @@ edl_print_summary :: proc(edl: ^Edit_Decision_List) {
 	}
 
 	fmt.printfln("=== TrimSync Edit Decision List ===")
+	fmt.printfln("  Total start frames: %d", int(edl.duration * edl.frame_rate))
 	fmt.printfln("  Original duration:  %.1fs", edl.duration)
 	fmt.printfln("  Frame rate:         %.2f fps", edl.frame_rate)
 	fmt.printfln("  Sample rate:        %d Hz", edl.sample_rate)

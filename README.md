@@ -22,6 +22,11 @@ To build the executable, simply run:
 
 ```bash
 odin build . -out:trimsy -o:speed
+
+# On windows add -extra-linker-flags
+odin build . -out:trimsy.exe -o:speed -extra-linker-flags:"/LIBPATH:C:\path\to\your\ffmpeg-shared\lib"
+# You'll also need to copy avutil-##.dll avcodec-##.dll avformat-##.dll and swresample-#.dll near your .exe
+# Or add the ffmpeg-shared/bin directory to your path
 ```
 
 ## Usage

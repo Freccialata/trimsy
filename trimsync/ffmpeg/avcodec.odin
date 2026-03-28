@@ -8,6 +8,8 @@ import "core:c"
 
 when ODIN_OS == .Darwin {
 	foreign import avcodec "system:avcodec"
+} else when ODIN_OS == .Windows {
+	foreign import avcodec "system:avcodec.lib"
 } else {
 	foreign import avcodec "system:avcodec"
 }

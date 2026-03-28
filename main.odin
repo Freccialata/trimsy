@@ -66,7 +66,7 @@ PRESETS := [?]Preset{
 // ─── Help ───────────────────────────────────────────────────────────────────────
 
 print_help :: proc() {
-	fmt.printfln("trimsy v%s — TrimSync CLI video speed editor", TRIMSY_VERSION)
+	fmt.printfln("trimsy v%s - TrimSync CLI video speed editor", TRIMSY_VERSION)
 	fmt.println("")
 	fmt.println("Usage:")
 	fmt.println("  trimsy <input_file> [options]")

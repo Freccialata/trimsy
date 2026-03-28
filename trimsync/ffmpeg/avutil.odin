@@ -8,6 +8,8 @@ import "core:c"
 
 when ODIN_OS == .Darwin {
 	foreign import avutil "system:avutil"
+} else when ODIN_OS == .Windows {
+	foreign import avutil "system:avutil.lib"
 } else {
 	foreign import avutil "system:avutil"
 }

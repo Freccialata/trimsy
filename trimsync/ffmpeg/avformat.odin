@@ -8,6 +8,8 @@ import "core:c"
 
 when ODIN_OS == .Darwin {
 	foreign import avformat "system:avformat"
+} else when ODIN_OS == .Windows {
+	foreign import avformat "system:avformat.lib"
 } else {
 	foreign import avformat "system:avformat"
 }

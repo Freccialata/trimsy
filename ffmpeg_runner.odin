@@ -3,7 +3,7 @@ package trimsy
 import "core:fmt"
 import "core:os"
 import "core:strings"
-import "core:math"
+import "core:c/libc"
 import ts "trimsync"
 
 // Build_Error classifies ffmpeg runner failures.
@@ -137,7 +137,7 @@ ffmpeg_process :: proc(
 	full_cmd_c := strings.clone_to_cstring(full_cmd)
 	defer delete(full_cmd_c)
 
-	ret := _system(full_cmd_c)
+	ret := libc.system(full_cmd_c)
 	if ret != 0 {
 		fmt.eprintfln("[trimsy] error: ffmpeg exited with code %d", ret)
 		return .FFmpeg_Execution
@@ -196,13 +196,4 @@ default_output_path :: proc(input_path: string) -> string {
 	base := input_path[:dot_idx]
 	ext := input_path[dot_idx:]
 	return strings.concatenate({base, "_trimmed", ext})
-}
-
-// libc system()
-foreign import libc "system:System.framework"
-
-@(default_calling_convention = "c")
-foreign libc {
-	@(link_name = "system")
-	_system :: proc(command: cstring) -> i32 ---
 }
